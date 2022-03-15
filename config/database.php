@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'reimu' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL_Reimu'),
+            'host' => env('DB_HOST_Reimu', '127.0.0.1'),
+            'port' => env('DB_PORT_Reimu', '3306'),
+            'database' => env('DB_DATABASE_Reimu', 'forge'),
+            'username' => env('DB_USERNAME_Reimu', 'forge'),
+            'password' => env('DB_PASSWORD_Reimu', ''),
+            'unix_socket' => env('DB_SOCKET_Reimu', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

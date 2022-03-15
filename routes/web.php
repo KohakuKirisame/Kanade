@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommitteeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/s/{uid}',function ($uid){
+    return redirect("https://reimu.nbmun.org/s/".$uid);
+});
+
+Route::get("/committees",[CommitteeController::class,"getCommittees"]);
