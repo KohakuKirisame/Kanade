@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommitteeController;
+use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\SeatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,18 @@ use App\Http\Controllers\CommitteeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (){
+	return view('welcome');
 });
 
-Route::get('/s/{uid}',function ($uid){
-    return redirect("https://reimu.nbmun.org/s/".$uid);
+Route::get('/s/{uid}', function ($uid){
+	return redirect("https://灵.星云模联.中国/s/" . $uid);
 });
 
-Route::get("/committees",[CommitteeController::class,"getCommittees"]);
+Route::get("/committees", [CommitteeController::class, "getCommittees"]);
+
+Route::prefix("Actions")->group(function(){
+	Route::post("/UpdateCommittee", [CommitteeController::class, "updateCommittee"])->middleware("issupadmin");
+	Route::post("/GetScore",[ScoreController::class,"getScore"])->middleware("isself");
+	Route::post("/GetSeat",[SeatController::class,"getSeat"])->middleware("isself");
+});
