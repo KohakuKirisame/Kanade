@@ -1,0 +1,44 @@
+html{
+	overflow-x: hidden;
+}
+body {
+	background: url("/storage/kanade/background.jpg") center no-repeat;
+	background-size: cover;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+main {
+	flex: 1;
+}
+.page-footer{
+	background: rgba(0,0,0,0.5);
+}
+.bg-img{
+	min-width: 100%;
+	min-height: 50%;
+	height:-webkit-fill-available;
+	z-index: -999;
+	position: absolute;
+	background: url("/storage/kanade/background.jpg") center no-repeat;
+	background-size: cover;
+	transition: all 0.5s ease-in-out;
+}
+.logo{
+	max-width: 18%;
+}
+.logo-svg{
+	filter: drop-shadow(0 1rem 3rem rbga(0,0,0,0.36));
+	-webkit-filter: drop-shadow(0 1rem 3rem rgba(0,0,0,0.36));
+}
+.bgBlur{
+	filter: blur(2px) brightness(80%);
+}
+.cbl{
+	margin-top: 20%;
+}
+.main-form{
+	background: rgba(255,255,255,0.4);
+	border-radius: 20px;
+}

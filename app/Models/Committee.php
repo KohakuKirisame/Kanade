@@ -19,7 +19,7 @@ class Committee extends Model{
 	}
 	
 	public function getCommitteeInfo($cid){
-		$committee = DB::table("committee")->where("cid","=",intval($cid))->get();
+		$committee = DB::table("committee")->where("cid","=",intval($cid))->first();
 		return $committee;
 	}
 	

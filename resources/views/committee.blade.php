@@ -7,6 +7,7 @@
     </head>
     <body>
         @foreach ($committees as $committee)
+            <img src="/storage/committee/{{$committee->cid}}.jpg" />
             <p>
                 委员会：{{$committee->committee}}<br />
                 议题：{{$committee->topic}}
